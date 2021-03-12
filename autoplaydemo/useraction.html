@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>user action</title>
+  </head>
+  <body>
+    <video id="video" src="./sound.mp4" ></video>
+    <button id="playButton" >play</button>
+    <script>
+      let button = document.getElementById("playButton");
+      let video = document.getElementById("video");
+      button.addEventListener("click", function() {
+        video.play();
+      })
+    </script>
+  </body>
+</html>
