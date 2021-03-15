@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>autoplay</title>
+  </head>
+  <body>
+    <video id="video" style="width: 640px; height: 480px;" src="./sound.mp4" ></video>
+    <script>
+      let video = document.getElementById("video");
+
+      if (window.WeixinJSBridge) {
+        wechatPlayVideo();
+      } else {
+        document.addEventListener("WeixinJSBridge", () => {
+          wechatPlayVideo();
+        })
+      }
+
+      function wechatPlayVideo () {
+        window.WeixinJSBridge.invoke("getNetworkType", {}, () => {
+          video.play().then(() => {
+            // autoplay success
+          }).catch((err) => {
+            // show play button or mute video then play again
+          })
+        })
+      }
+      
+    </script>
+  </body>
+</html>

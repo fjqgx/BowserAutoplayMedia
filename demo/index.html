@@ -4,12 +4,12 @@
   </head>
   <body>
     <video id="video" style="width: 640px; height: 480px;" src="./sound.mp4" ></video>
-    <button id="playButton" >play</button>
     <script>
-      let button = document.getElementById("playButton");
       let video = document.getElementById("video");
-      button.addEventListener("click", function() {
-        video.play();
+      video.play().then(() => {
+        // autoplay success
+      }).catch((err) => {
+        // show play button or mute video then play again
       })
     </script>
   </body>
