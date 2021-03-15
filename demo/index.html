@@ -4,12 +4,19 @@
   </head>
   <body>
     <video id="video" style="width: 640px; height: 480px;" src="./sound.mp4" ></video>
+    <button style="visibility: hidden;" id="play">play</button>
     <script>
       let video = document.getElementById("video");
+      let button = document.getElementById("play");
       video.play().then(() => {
         // autoplay success
       }).catch((err) => {
         // show play button or mute video then play again
+        button.style.visibility = "visible";
+      })
+
+      button.addEventListener("click", () => {
+        video.play();
       })
     </script>
   </body>
