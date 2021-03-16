@@ -10,18 +10,14 @@
       if (window.WeixinJSBridge) {
         wechatPlayVideo();
       } else {
-        document.addEventListener("WeixinJSBridge", () => {
+        document.addEventListener("WeixinJSBridge", function () {
           wechatPlayVideo();
         })
       }
 
       function wechatPlayVideo () {
-        window.WeixinJSBridge.invoke("getNetworkType", {}, () => {
-          video.play().then(() => {
-            // autoplay success
-          }).catch((err) => {
-            // show play button or mute video then play again
-          })
+        window.WeixinJSBridge.invoke("getNetworkType", {}, function () {
+          video.play();
         })
       }
       
