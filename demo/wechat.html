@@ -5,7 +5,7 @@
   <body>
     <video id="video" preload="auto" x5-playsinline playsinline webkit-playsinline style="width: 640px; height: 480px;" src="./sound.mp4" controls></video>
     <script>
-      let video = document.getElementById("video");
+      var video = document.getElementById("video");
 
       if (window.WeixinJSBridge) {
         wechatPlayVideo();
